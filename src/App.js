@@ -2,11 +2,14 @@ import { client } from "./client";
 import { useState, useEffect } from "react";
 
 import RecipeCards from "./components/RecipeCards"
+import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [tags, setTags] = useState([]);
-
+  const [title, setTitle] = useState("")
+  const [filteredRecipes, setFilteredRecipes] = useState([])
 
 
   useEffect(() => {
@@ -15,6 +18,7 @@ function App() {
       .then(response => {
         console.log(response.items);
         setRecipes(response.items);
+        setFilteredRecipes(response.items)
       })
       .catch(console.error);
 
@@ -31,21 +35,17 @@ function App() {
   const onTagsChange = (tag) => {
     console.log('klickat', tag);
     const filter = recipes.filter((recipe) => {
-      return recipe.metadata.tags[0].sys.id === tag
+      return recipe.metadata.tags[0].sys.id === tag.sys.id
     })
-    console.log(filter);
+    setTitle(tag.name)
+    setFilteredRecipes(filter);
   }
     
   return (
     <>
-      <nav>
-       { tags.map((tag) => {
-         return <button key={tag.sys.id} onClick={onTagsChange(tag.sys.id)}>{tag.name}</button>
-       })}
-      </nav>
-      <h1>Helena och Elins Resept!</h1>
-      
-      <RecipeCards recipes={recipes} />
+      <Navbar tags={tags} onTagsChange={onTagsChange} />
+      <Header title={title}/>
+      <RecipeCards recipes={filteredRecipes}  />
     </>
   );
 }
