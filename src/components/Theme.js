@@ -1,15 +1,28 @@
+import ThemeCard from "./ThemeCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import styled from "styled-components";
+
+const ThemeSwiper = styled(Swiper)`
+  height: 150px;
+`;
+
+//Gör en swiper
+
 const Theme = ({ tags, onTagsChange }) => {
   const themeTags = tags.filter(tag => tag.sys.id.includes("theme"));
   return (
-    <nav>
-      {themeTags.map(tag => {
-        return (
-          <button key={tag.sys.id} onClick={() => onTagsChange(tag, 1)}>
-            {tag.name}
-          </button>
-        );
-      })}
-    </nav>
+    <section>
+      <ThemeSwiper spaceBetween={10} slidesPerView={1.5} loop={true}>
+        {themeTags.map(tag => {
+          return (
+            <SwiperSlide key={tag.sys.id}>
+              <ThemeCard tag={tag} onTagsChange={onTagsChange} />
+            </SwiperSlide>
+          );
+        })}
+      </ThemeSwiper>
+    </section>
   );
 };
 

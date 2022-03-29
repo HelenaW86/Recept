@@ -11,6 +11,7 @@ function App() {
   const [tags, setTags] = useState([]);
   const [title, setTitle] = useState("");
   const [filteredRecipes, setFilteredRecipes] = useState([]);
+  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     client
@@ -38,11 +39,17 @@ function App() {
     });
     setTitle(tag.name);
     setFilteredRecipes(filter);
+    setToggle(false);
   };
 
   return (
     <>
-      <Navbar tags={tags} onTagsChange={onTagsChange} />
+      <Navbar
+        tags={tags}
+        onTagsChange={onTagsChange}
+        toggle={toggle}
+        setToggle={setToggle}
+      />
       <Header title={title} />
       <Theme tags={tags} onTagsChange={onTagsChange} />
       <RecipeCards recipes={filteredRecipes} />
