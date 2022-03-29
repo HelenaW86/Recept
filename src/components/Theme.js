@@ -7,8 +7,6 @@ const ThemeSwiper = styled(Swiper)`
   height: 150px;
 `;
 
-//Gör en swiper
-
 const Theme = ({ tags, onTagsChange }) => {
   const themeTags = tags.filter(tag => tag.sys.id.includes("theme"));
   return (

@@ -4,3 +4,5 @@
 
 Contentful
 React
+styled-components
+Swiper.js
