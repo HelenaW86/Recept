@@ -53,6 +53,11 @@ function App() {
       <Header title={title} />
       <Theme tags={tags} onTagsChange={onTagsChange} />
       <RecipeCards recipes={filteredRecipes} />
+      {/* <Home 
+        title={title}
+        tags={tags}
+        onTagsChange={onTagsChange} 
+        filteredRecipes={filteredRecipes} /> */}
     </>
   );
 }
