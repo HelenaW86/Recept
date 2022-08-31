@@ -1,10 +1,12 @@
 import { client } from "./client";
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 
 import RecipeCards from "./components/RecipeCards";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Theme from "./components/Theme";
+import Recipe from "./components/Recipe";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -58,6 +60,11 @@ function App() {
         tags={tags}
         onTagsChange={onTagsChange} 
         filteredRecipes={filteredRecipes} /> */}
+         <Routes>
+       
+        <Route path="recipe/:recipeId" element={<Recipe recipes={recipes} />} />
+      </Routes>
+      <footer style={{backgroundColor: "grey", height: "50px"}}>FOOOTER</footer>
     </>
   );
 }
