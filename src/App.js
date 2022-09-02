@@ -2,11 +2,10 @@ import { client } from "./client";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import RecipeCards from "./components/RecipeCards";
 import Navbar from "./components/Navbar";
-import Header from "./components/Header";
 import Theme from "./components/Theme";
 import Recipe from "./components/Recipe";
+import Home from "./pages/Home";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -52,15 +51,8 @@ function App() {
         toggle={toggle}
         setToggle={setToggle}
       />
-      <Header title={title} />
-      <Theme tags={tags} onTagsChange={onTagsChange} />
-      <RecipeCards recipes={filteredRecipes} />
-      {/* <Home 
-        title={title}
-        tags={tags}
-        onTagsChange={onTagsChange} 
-        filteredRecipes={filteredRecipes} /> */}
       <Routes> 
+        <Route path="/" element={<Home recipes={filteredRecipes} title={title} tags={tags} onTagsChange={onTagsChange}/>} />
         <Route path="recept/:recipeId" element={<Recipe recipes={recipes} />} />
       </Routes>
       <footer style={{backgroundColor: "grey", height: "50px"}}>FOOOTER</footer>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import img from "../assets/wa.svg";
 import Menu from "./Menu";
+import { Link } from "react-router-dom";
 
 const Nav = styled.nav`
   background-color: grey;
@@ -35,9 +36,9 @@ const Navbar = ({ tags, onTagsChange, setToggle, toggle }) => {
   return (
     <>
       <Nav>
-        <a href="#">
+        <Link to={'/'}>
           <Logo src={img} alt="wa" />
-        </a>
+        </Link>
         <Hamburger onClick={() => setToggle(!toggle)}>
           <Lines></Lines>
           <Lines></Lines>
