@@ -2,14 +2,15 @@ import React from "react";
 import { useParams } from "react-router-dom";
 const Recipe = ({recipes}) => {
     const { recipeId } = useParams();
-    const theRecepie = recipes.find((r => r.sys.id === recipeId));
+    const theRecipe = recipes.find((r => r.fields.slug === recipeId));
+    console.log('THE RECIPE: ', theRecipe);
+    const recipeTitle = theRecipe.fields.title;
 
     return ( 
         <>
         <h1>ReCIPEEE</h1>
+        <h2>{recipeTitle}</h2>
   
-        <p>{theRecepie.sys.id}</p>
-
         {/* { recipes.map((recipe) => {
             return (
               <article key={recipe.sys.id}>

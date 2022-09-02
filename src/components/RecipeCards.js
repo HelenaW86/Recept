@@ -6,7 +6,7 @@ const RecipeCards = ({recipes}) => {
         { recipes.map((recipe) => {
             return (
               <article key={recipe.sys.id}>
-                <Link to={`recipe/${recipe.sys.id}`}> Go!</Link>
+                <Link to={`recept/${recipe.fields.slug}`}> Go!</Link>
                 {/* ${chargerId} */}
                 {console.log()}
                 <h2>{ recipe.fields.title }</h2>
