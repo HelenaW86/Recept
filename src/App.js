@@ -53,7 +53,7 @@ function App() {
       />
       <Routes> 
         <Route path="/" element={<Home recipes={filteredRecipes} title={title} tags={tags} onTagsChange={onTagsChange}/>} />
-        <Route path="recept/:recipeId" element={<Recipe recipes={recipes} />} />
+        <Route path="recept/:recipeSlug" element={<Recipe recipes={recipes} />} />
       </Routes>
       <footer style={{backgroundColor: "grey", height: "50px"}}>FOOOTER</footer>
     </>
