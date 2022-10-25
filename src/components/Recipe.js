@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Recipe = ({ recipes }) => {
   const { recipeSlug } = useParams();
   const theRecipe = recipes.find((r => r.fields.slug === recipeSlug));
@@ -9,6 +10,9 @@ const Recipe = ({ recipes }) => {
 
   return (
     <article className="single-recipe">
+      <Link to={'/'}>
+        TILLBAKA
+      </Link>
       <h2>{recipe?.title}</h2>
       <img src={recipe?.image?.fields?.file?.url} alt={recipe?.title} />
       <div>

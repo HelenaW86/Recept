@@ -32,12 +32,12 @@ const Dropdown = styled.div`
   background-color: pink;
 `;
 
-const Navbar = ({ tags, onTagsChange, setToggle, toggle }) => {
+const Navbar = ({ tags, onTagsChange, setToggle, toggle, resetRecipes }) => {
   return (
     <>
       <Nav>
         <Link to={'/'}>
-          <Logo src={img} alt="wa" />
+          <Logo src={img} alt="wa" onClick={() => resetRecipes()} />
         </Link>
         <Hamburger onClick={() => setToggle(!toggle)}>
           <Lines></Lines>

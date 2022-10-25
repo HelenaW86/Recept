@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer"
 import Theme from "./components/Theme";
 import Recipe from "./components/Recipe";
 import Home from "./pages/Home";
@@ -13,14 +14,16 @@ function App() {
   const [title, setTitle] = useState("");
   const [filteredRecipes, setFilteredRecipes] = useState([]);
   const [toggle, setToggle] = useState(false);
+  const [latestRecipes, setLatestRecipes] = useState([]);
 
   useEffect(() => {
     client
       .getEntries()
       .then(response => {
-        console.log(response.items);
-        setRecipes(response.items);
-        setFilteredRecipes(response.items);
+        const orderedRecipes = response?.items.sort((a, b) => { return new Date(b.sys.createdAt) - new Date(a.sys.createdAt)});
+        setRecipes(orderedRecipes);
+        setLatestRecipes(orderedRecipes.slice(0, 5));
+        setFilteredRecipes(orderedRecipes.slice(0, 5));
       })
       .catch(console.error);
 
@@ -36,12 +39,17 @@ function App() {
   const onTagsChange = (tag, group) => {
     console.log("klickat", tag);
     const filter = recipes.filter(recipe => {
-      return recipe.metadata.tags[group]?.sys.id === tag.sys.id;
+      return recipe.metadata.tags[group]?.sys.id === tag?.sys.id;
     });
-    setTitle(tag.name);
+    setTitle(tag?.name);
     setFilteredRecipes(filter);
     setToggle(false);
   };
+
+  const resetRecipes = () => {
+    setFilteredRecipes(latestRecipes);
+    setTitle(null);
+  }
 
   return (
     <>
@@ -50,12 +58,13 @@ function App() {
         onTagsChange={onTagsChange}
         toggle={toggle}
         setToggle={setToggle}
+        resetRecipes={resetRecipes}
       />
       <Routes> 
         <Route path="/" element={<Home recipes={filteredRecipes} title={title} tags={tags} onTagsChange={onTagsChange}/>} />
         <Route path="recept/:recipeSlug" element={<Recipe recipes={recipes} />} />
       </Routes>
-      <footer style={{backgroundColor: "grey", height: "50px"}}>FOOOTER</footer>
+      <Footer />
     </>
   );
 }
