@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import img from "../assets/wa.svg";
+import img from "../assets/logo.svg";
 import Menu from "./Menu";
 import { Link } from "react-router-dom";
 
 const Nav = styled.nav`
-  background-color: grey;
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  padding: 14px;
 `;
 
 const Logo = styled.img`
-  width: 100px;
+  width: 70px;
 `;
 
 const Hamburger = styled.button`
@@ -21,7 +23,7 @@ const Hamburger = styled.button`
 `;
 
 const Lines = styled.div`
-  background-color: black;
+  background-color: white;
   height: 5px;
   width: 50px;
   margin: 8px;
