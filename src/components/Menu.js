@@ -12,8 +12,8 @@ const Menu = ({ tags, onTagsChange }) => {
     <ul>
       {categoryTags.map(tag => {
         return (
-          <li key={tag.sys.id}>
-            <Button onClick={() => onTagsChange(tag, 0)}>{tag.name}</Button>
+          <li className="menu-item" key={tag.sys.id}>
+            <button onClick={() => onTagsChange(tag, 0)}>{tag.name}</button>
           </li>
         );
       })}

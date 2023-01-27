@@ -1,0 +1,28 @@
+.dropdown-menu {
+  background-color: $primary;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  padding: 8em 1em 4em 12em;
+  height: 100vh;
+  transform: translateX(100%);
+  transition: 0.2s ease-out;
+
+  &.open {
+    transform: translateX(0);
+  }
+  
+  .menu-item {
+    list-style: none;
+    line-height: 3;
+
+    button {
+      
+      border: none;
+      background: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      text-transform: capitalize;
+    }
+  }
+}

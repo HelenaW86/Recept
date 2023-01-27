@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 const ThemeSwiper = styled(Swiper)`
   height: 150px;
+  z-index: 0;
 `;
 
 const Theme = ({ tags, onTagsChange }) => {
