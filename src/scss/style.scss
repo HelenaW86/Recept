@@ -1,8 +1,11 @@
 @import 'variables';
 
+@import 'core/base';
+
 @import 'components/footer';
 @import 'components/hero';
 @import 'components/recipe';
+@import 'components/recipe-cards';
 @import 'components/button';
 @import 'components/navbar';
 @import 'components/menu';

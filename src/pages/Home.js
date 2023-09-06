@@ -6,7 +6,7 @@ const Home = ({ recipes, title, onTagsChange, tags }) => {
   return (
     <>
       <Hero title={title} onTagsChange={onTagsChange} tags={tags} />
-      <RecipeCards recipes={recipes} />
+      <RecipeCards recipes={recipes} title={title} />
     </>
   );
 }

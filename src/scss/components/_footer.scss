@@ -1,6 +1,22 @@
 footer {
   height: 100px;
-  background-color: grey;
+  background-color: $black;
   text-align: center;
   font-size: 25px;
+  position: relative;
+  height: 100px;
+  bottom: 0; 
+  left: 0;
+  right: 0;
+  top: auto;
+  .icon{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+  .text{
+    padding-top: 20px;
+    color: $white;
+    font-size: 16px;
+  }
 }
