@@ -22,8 +22,8 @@ function App() {
       .then(response => {
         const orderedRecipes = response?.items.sort((a, b) => { return new Date(b.sys.createdAt) - new Date(a.sys.createdAt)});
         setRecipes(orderedRecipes);
-        setLatestRecipes(orderedRecipes.slice(0, 5));
-        setFilteredRecipes(orderedRecipes.slice(0, 5));
+        setLatestRecipes(orderedRecipes);
+        setFilteredRecipes(orderedRecipes);
       })
       .catch(console.error);
 
@@ -48,7 +48,7 @@ function App() {
 
   const resetRecipes = () => {
     setFilteredRecipes(latestRecipes);
-    setTitle(null);
+    setTitle("Senaste Recepten");
   }
 
   return (

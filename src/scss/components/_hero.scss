@@ -4,6 +4,8 @@
   padding-bottom: 20px;
   color: $white;
   text-align: center;
+  height: 374px;
+  
   .theme-button-wrapper{
     display: flex;
     flex-wrap: wrap;
@@ -15,12 +17,6 @@
     .theme-button{
       background-color: white;
       width: 48%;
-      height: 40px;
-      margin: 1%;
-      border: none;
-      font-size: 17px;
-      border-radius: 3px;
-      }
+    }
   }
-
 }

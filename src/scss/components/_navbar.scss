@@ -5,6 +5,11 @@ nav.navbar {
   justify-content: space-between;
   padding: 14px;
   z-index: 2;
+  transition: all 1 ease-in;
+
+  &.background {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
 
   button.hamburger {
     position: relative;

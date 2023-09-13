@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import img from "../assets/logo.svg";
 import Menu from "./Menu";
@@ -11,9 +11,22 @@ const Logo = styled.img`
 `;
 
 const Navbar = ({ tags, onTagsChange, setToggle, toggle, resetRecipes }) => {
+  const [background, setBackground] = useState(false);
+
+  window.addEventListener("scroll", () => {
+    console.log(window.scrollY);
+    if (window.scrollY > 1) {
+      setBackground(true);
+    } else {
+      setBackground(false);
+    }
+  })
+
+
+
   return (
     <>
-      <nav className="navbar">
+      <nav className={`navbar ${background ? "background" : ""}`}>
         <Link to={'/'}>
           <Logo src={img} alt="wa" onClick={() => resetRecipes()} />
         </Link>
