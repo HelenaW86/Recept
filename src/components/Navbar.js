@@ -14,7 +14,6 @@ const Navbar = ({ tags, onTagsChange, setToggle, toggle, resetRecipes }) => {
   const [background, setBackground] = useState(false);
 
   window.addEventListener("scroll", () => {
-    console.log(window.scrollY);
     if (window.scrollY > 1) {
       setBackground(true);
     } else {
