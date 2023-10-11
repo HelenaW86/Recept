@@ -11,7 +11,7 @@ import Home from "./pages/Home";
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [tags, setTags] = useState([]);
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState("Senaste recepten");
   const [filteredRecipes, setFilteredRecipes] = useState([]);
   const [toggle, setToggle] = useState(false);
   const [latestRecipes, setLatestRecipes] = useState([]);

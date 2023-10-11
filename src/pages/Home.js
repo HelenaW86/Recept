@@ -13,7 +13,7 @@ const Home = ({ recipes, title, onTagsChange, tags, resetRecipes, setToggle, tog
         setToggle={setToggle}
         resetRecipes={resetRecipes}
       />
-      <Hero title={title} onTagsChange={onTagsChange} tags={tags} />
+      <Hero title={title} onTagsChange={onTagsChange} tags={tags} resetRecipes={resetRecipes}/>
       <RecipeCards recipes={recipes} title={title} />
     </>
   );

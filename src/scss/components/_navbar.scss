@@ -2,7 +2,7 @@ nav.navbar {
   position: fixed;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 14px;
   z-index: 2;
   transition: all 1 ease-in;

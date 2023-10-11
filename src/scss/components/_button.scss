@@ -1,11 +1,12 @@
 .btn {
-  height: 40px;
   margin: 1%;
   border: none;
   font-size: 17px;
+  line-height: 0.8;
   border-radius: 3px;
-  padding: 10px 20px;
+  padding: 14px 26px;
   cursor: pointer;
+  text-transform: uppercase;
   
   &.primary-btn {
     background-color: $black;

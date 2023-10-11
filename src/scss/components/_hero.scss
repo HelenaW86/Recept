@@ -1,10 +1,18 @@
 .hero {
   background-image: url('../../assets/image.png');
+  background-size: cover;
   padding-top: 102px;
   padding-bottom: 20px;
   color: $white;
   text-align: center;
-  height: 374px;
+
+  .hero-content {
+    padding: 0 1rem;
+    
+    p {
+      margin: 1rem 0;
+    }
+  }
   
   .theme-button-wrapper{
     display: flex;

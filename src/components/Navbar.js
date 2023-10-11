@@ -10,7 +10,7 @@ const Logo = styled.img`
   width: 70px;
 `;
 
-const Navbar = ({ tags, onTagsChange, setToggle, toggle, resetRecipes }) => {
+const Navbar = ({ tags, onTagsChange, setToggle, toggle }) => {
   const [background, setBackground] = useState(false);
 
   window.addEventListener("scroll", () => {
@@ -26,9 +26,9 @@ const Navbar = ({ tags, onTagsChange, setToggle, toggle, resetRecipes }) => {
   return (
     <>
       <nav className={`navbar ${background ? "background" : ""}`}>
-        <Link to={'/'}>
+        {/* <Link to={'/'}>
           <Logo src={img} alt="wa" onClick={() => resetRecipes()} />
-        </Link>
+        </Link> */}
         <Hamburger setToggle={setToggle} toggle={toggle} />
       </nav>
 

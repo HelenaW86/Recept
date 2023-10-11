@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Oswald&display=swap');
+
+@font-face {
+  font-family: "Butcherly";
+  src:
+    local("Butcherly"),
+    url("../assets/fonts/Font415.otf") format("opentype"),
+    url("../assets/fonts/Font415.ttf") format("truetype");
+}
+
+$mainHeadingFont: 'Butcherly', serif; 
+$subHeadingFont: 'Oswald', sans-serif;
 $mainFont: 'Montserrat', sans-serif;
 $white: #FFF;
 $black: #1B1B1B;
