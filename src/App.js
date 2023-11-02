@@ -72,6 +72,10 @@ function App() {
           path="recept/:recipeSlug"
           element={<Recipe recipes={recipes} />}
         />
+         <Route
+          path="/:creator"
+          element={<Recipe recipes={recipes} />}
+        />
       </Routes>
       <Footer />
     </>
