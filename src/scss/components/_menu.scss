@@ -1,15 +1,42 @@
-.dropdown-menu {
-  background-color: grey;
-  z-index: 1;
+
+
+.dropdown-menu-modal{
+  @media (min-width: $tablet) {
+  background-color: rgba(250, 244, 244, 0.616);
+  z-index: 0;
   position: fixed;
   width: 100%;
-  padding: 8em 1em 4em 12em;
   height: 100vh;
   transform: translateX(100%);
-  transition: 0.2s ease-out;
+  transition: 0.1s ease-out;
+  cursor: pointer;
 
   &.open {
     transform: translateX(0);
+  }}
+}
+.dropdown-menu {
+  background-color: $white;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  padding: 6em;
+  height: 100vh;
+  transform: translateX(100%);
+  transition: 0.2s ease-out;
+  @media (min-width: $tablet) {
+    right: 0;
+    transform: translateX(100%);
+    max-width: 500px;
+  }
+
+  &.open {
+    transform: translateX(0);
+    @media (min-width: $tablet) {
+      right: 500px;
+      transform: translateX(500px);
+      max-width: 500px;
+  }
   }
   
   .menu-item {

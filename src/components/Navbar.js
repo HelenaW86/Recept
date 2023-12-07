@@ -14,10 +14,12 @@ const Navbar = ({ tags, onTagsChange, setToggle, toggle }) => {
   const [background, setBackground] = useState(false);
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 1) {
-      setBackground(true);
-    } else {
-      setBackground(false);
+    if(toggle){
+      if (window.scrollY > 1) {
+        setBackground(true);
+      } else {
+        setBackground(false);
+      }
     }
   })
 
@@ -25,16 +27,14 @@ const Navbar = ({ tags, onTagsChange, setToggle, toggle }) => {
 
   return (
     <>
-      <nav className={`navbar ${background ? "background" : ""}`}>
-        {/* <Link to={'/'}>
-          <Logo src={img} alt="wa" onClick={() => resetRecipes()} />
-        </Link> */}
+      <nav className={`navbar ${background &&  !toggle ? "background" : ""}`}>
         <Hamburger setToggle={setToggle} toggle={toggle} />
       </nav>
 
-   
-      <div className={`dropdown-menu ${toggle ? "open" : ""}`}>
+      <div className={`dropdown-menu-modal ${toggle ? "open" : ""}`} onClick={() => setToggle(false)}></div>
+      <div className={`dropdown-menu ${toggle ? "open" : ""}`} onClick={(e) => e.preventDefault()}>
         <Menu tags={tags} onTagsChange={onTagsChange} setToggle={setToggle} />
+    
       </div>
       
     </>

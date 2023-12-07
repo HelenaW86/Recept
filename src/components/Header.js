@@ -6,7 +6,7 @@ const Header = ({ resetRecipes }) => {
   return (
     <div className="hero-content">
       <Link to={"/"}>
-        <GodMat onClick={() => resetRecipes()} />
+        <GodMat className="hero-logo" onClick={() => resetRecipes()} />
       </Link>
 
       <p>

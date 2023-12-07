@@ -1,19 +1,27 @@
 .hero {
   background-image: url('../../assets/image.png');
   background-size: cover;
-  padding-top: 102px;
+  padding-top: 70px;
   padding-bottom: 20px;
   color: $white;
   text-align: center;
 
   .hero-content {
     padding: 0 1rem;
-    
     p {
-      margin: 1rem 0;
+      font-size: 1.2rem;
+      margin: 2rem 0 0;
+      @media (min-width: $tablet){
+        font-size: 1.5rem; 
+      }
+    }
+    .hero-logo {
+      width: 200px;
+      @media (min-width: $tablet){
+        width: 300px;       
+      }
     }
   }
-  
   .theme-button-wrapper{
     display: flex;
     flex-wrap: wrap;
@@ -21,10 +29,17 @@
     max-width: 400px;
     margin: auto;
     padding-top: 30px; 
+    @media (min-width: $tablet){
+      margin: auto auto 20px auto;     
+    }
 
     .theme-button{
       background-color: white;
       width: 48%;
+      font-size: 0.9rem;
+      @media (min-width: $tablet){
+        font-size: 1.2rem; 
+      }
     }
   }
 }

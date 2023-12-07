@@ -1,12 +1,13 @@
 import { client } from "./client";
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Theme from "./components/Theme";
-import Recipe from "./components/Recipe";
+import Recipe from "./pages/Recipe";
 import Home from "./pages/Home";
+import { CreatorPage } from "./pages/CreatorPage";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -46,6 +47,10 @@ function App() {
     setToggle(false);
   };
 
+  const getCreator = (tag, group) => {
+    onTagsChange(tag, group);
+  };
+
   const resetRecipes = () => {
     setFilteredRecipes(latestRecipes);
     setTitle("Senaste Recepten");
@@ -57,9 +62,37 @@ function App() {
         <Route
           path="/"
           element={
-            <Home
-              recipes={filteredRecipes}
+            <>
+              <Home
+                recipes={filteredRecipes}
+                title={title}
+                tags={tags}
+                onTagsChange={onTagsChange}
+                toggle={toggle}
+                setToggle={setToggle}
+                resetRecipes={resetRecipes}
+              />
+              <Outlet />
+            </>
+          }
+        >
+          <Route
+                path="/outlet"
+                element={
+                  <h2>OUTLET</h2>
+                }
+              ></Route>
+        </Route>
+        <Route
+          path="recept/:recipeSlug"
+          element={<Recipe recipes={recipes} />}
+        />
+        <Route
+          path="/:creator"
+          element={
+            <CreatorPage
               title={title}
+              recipes={filteredRecipes}
               tags={tags}
               onTagsChange={onTagsChange}
               toggle={toggle}
@@ -67,14 +100,6 @@ function App() {
               resetRecipes={resetRecipes}
             />
           }
-        />
-        <Route
-          path="recept/:recipeSlug"
-          element={<Recipe recipes={recipes} />}
-        />
-         <Route
-          path="/:creator"
-          element={<Recipe recipes={recipes} />}
         />
       </Routes>
       <Footer />

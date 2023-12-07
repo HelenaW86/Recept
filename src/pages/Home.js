@@ -1,6 +1,7 @@
 import RecipeCards from '../components/RecipeCards';
 import Hero from '../components/Hero';
 import Navbar from '../components/Navbar';
+import { Link } from 'react-router-dom';
 
 
 const Home = ({ recipes, title, onTagsChange, tags, resetRecipes, setToggle, toggle }) => {
@@ -13,7 +14,8 @@ const Home = ({ recipes, title, onTagsChange, tags, resetRecipes, setToggle, tog
         setToggle={setToggle}
         resetRecipes={resetRecipes}
       />
-      <Hero title={title} onTagsChange={onTagsChange} tags={tags} resetRecipes={resetRecipes}/>
+      <Hero onTagsChange={onTagsChange} tags={tags} resetRecipes={resetRecipes}/>
+      <Link to={"/outlet"} >Outlet</Link>
       <RecipeCards recipes={recipes} title={title} />
     </>
   );

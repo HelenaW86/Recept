@@ -1,7 +1,7 @@
 .single-recipe {
   min-height: calc(100vh - 100px);
 
-  .hero-recipe{
+  .hero-recipe {
     height: 280px;
     position: relative;
     background-size: cover;
@@ -11,7 +11,12 @@
     flex-direction: column;
     justify-content: space-between;
     color: white;
-
+    @media (min-width: $tablet){
+      height: 380px;
+    }
+    @media (min-width: $desktop){
+      height: 420px;
+    }
 
     &::before {
       content: "";
@@ -23,43 +28,64 @@
       background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
     }
 
-    h1, a {
+    h1,
+    a {
       z-index: 10;
     }
   }
 
   .content-section {
     padding: 0 1rem;
-    
-    .recipe-content-container{
+
+    .recipe-content-container {
       padding-bottom: 1rem;
+      margin-top: 1rem;
+      .dinner-prepare-span{
+        font-size: 1rem;
+        margin-right: 1rem;
+  
+        @media (min-width: $tablet){
+          font-size: 1.2rem; 
+        }
+      }
+    }
+    .dinner-icon{
+      margin-right: 0.3rem;
+      width: 1.2rem; 
+      @media (min-width: $tablet){
+        width: 1.4rem; 
+      }
     }
 
     li {
       position: relative;
       line-height: 1.5;
+      font-size: 1rem;
+      @media (min-width: $tablet) {
+        font-size: 1.2rem;
+      }
     }
-  
-    .ul-list{
+
+    .ul-list {
       li {
         padding-left: 20px;
         padding-top: 10px;
         list-style: none;
-        
+
         &::before {
-          content: '🍩';
+          content: "🍩";
           position: absolute;
-          left: 0;
+          left: -5px;
         }
       }
     }
-    
-    .ol-list{
+
+    .ol-list {
       li {
         list-style-position: unset;
         margin-left: 20px;
         padding-top: 10px;
-      
+
         &::marker {
           font-weight: bold;
         }

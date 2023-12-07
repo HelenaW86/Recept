@@ -1,12 +1,8 @@
-import styled from "styled-components";
-
-const Button = styled.button`
-  border: none;
-  background: none;
-  cursor: pointer;
-`;
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Menu = ({ tags, onTagsChange }) => {
+  const navigate = useNavigate();
   const categoryTags = tags.filter(tag => tag.sys.id.includes("category"));
   const authorTags = tags.filter(tag => tag.sys.id.includes("author"));
   console.log(tags)
@@ -17,7 +13,7 @@ const Menu = ({ tags, onTagsChange }) => {
         {categoryTags.map(tag => {
           return (
             <li className="menu-item" key={tag.sys.id}>
-              <button onClick={() => onTagsChange(tag, 0)}>{tag.name}</button>
+              <button onClick={() => onTagsChange(tag, 0) }>{tag.name}</button>
             </li>
           );
         })}
@@ -27,7 +23,9 @@ const Menu = ({ tags, onTagsChange }) => {
         {authorTags.map(tag => {
           return (
             <li className="menu-item" key={tag.sys.id}>
-              <button onClick={() => onTagsChange(tag, 0)}>{tag.name}</button>
+              <button  onClick={() => {onTagsChange(tag, 0); navigate(`/${tag.name}`)}}>
+              {tag.name}
+              </button>
             </li>
           );
         })}

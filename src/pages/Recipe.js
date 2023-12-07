@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { ReactComponent as Clock } from "../assets/clock.svg";
 import { ReactComponent as Back } from "../assets/backarrow.svg";
-// import { ReactComponent as Portions } from "../assets/portions.svg";
+import { ReactComponent as Portions } from "../assets/portions.svg";
 const Recipe = ({ recipes }) => {
   const { recipeSlug } = useParams();
   const theRecipe = recipes.find((r) => r.fields.slug === recipeSlug);
@@ -18,12 +18,12 @@ const Recipe = ({ recipes }) => {
       </div>
       <section className="content-section">
         <div className="recipe-content-container">
-          <span>
-          <Clock/>
+          <span className="dinner-prepare-span">
+          <Clock className="dinner-icon"/>
             {recipe?.time} min
           </span>
-          {/* <Portions/> */}
-          <span>  {recipe?.serves} </span>
+          <Portions className="dinner-icon"/>
+          <span className="dinner-prepare-span">{recipe?.serves}</span>
         </div>
         <div className="recipe-content-container">
          <h2>Ingredienser:</h2>
