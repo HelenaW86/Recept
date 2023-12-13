@@ -6,7 +6,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Recipe from "./pages/Recipe";
 import Home from "./pages/Home";
-import { CreatorPage } from "./pages/CreatorPage";
 import RecipeCards from "./components/RecipeCards";
 
 function App() {
@@ -45,10 +44,6 @@ function App() {
     setTitle(tag?.name);
     setFilteredRecipes(filter);
     setToggle(false);
-  };
-
-  const getCreator = (tag, group) => {
-    onTagsChange(tag, group);
   };
 
   const resetRecipes = () => {

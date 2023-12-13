@@ -5,9 +5,15 @@
   padding-bottom: 20px;
   color: $white;
   text-align: center;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   .hero-content {
     padding: 0 1rem;
+
     p {
       font-size: 1.2rem;
       margin: 2rem 0 0;
@@ -15,6 +21,7 @@
         font-size: 1.5rem; 
       }
     }
+
     .hero-logo {
       width: 200px;
       @media (min-width: $tablet){
@@ -22,6 +29,7 @@
       }
     }
   }
+
   .theme-button-wrapper{
     display: flex;
     flex-wrap: wrap;
@@ -41,5 +49,9 @@
         font-size: 1.2rem; 
       }
     }
+  }
+
+  &.hero-creator {
+    background-image: url('../../assets/hero-creator.png');
   }
 }
