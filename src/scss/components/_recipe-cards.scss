@@ -1,9 +1,11 @@
 .recipe-list {
-  padding: 16px 16px 32px;
+  padding: 1em 16px 3em;
   min-height: calc(100vh - 374px - 100px);
-  @media (min-width: $tablet){
-    margin: auto;
-    max-width: 1200px; 
+  margin: auto;
+  max-width: 1200px; 
+
+  @media (min-width: $laptop){
+    padding: 4.5em 1em;
   }
   
 
@@ -34,7 +36,7 @@
             height: 160px;  
           }
           @media (min-width: $desktop){
-            height: 200px;  
+            height: 230px;  
           }
         }
       }

@@ -5,9 +5,7 @@ const Footer = () => {
 const year = new Date().getFullYear();
   return (
     <footer>
-      <div className="icon">
-        <GodMat height="60px"/>
-      </div>
+      <GodMat className="icon"/>
       <div className="text">
         <p>Amrén & Wiklund</p>
         <p>© {year}</p>

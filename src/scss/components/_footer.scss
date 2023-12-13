@@ -8,17 +8,23 @@ footer {
   font-size: 25px;
   position: relative;
 
-  .icon{
+  .icon {
     position: absolute;
     left: 16px;
+    width: 80px;
     top: 50%;
     transform: translateY(-50%);
+
+    @media (min-width: $tablet) {
+      width: 90px;
+    }
   }
-  .text{
+  .text {
     color: $white;
     font-size: 16px;
+
     @media (min-width: $tablet) {
-        font-size: 22px;
-    }
+      font-size: 22px;
     }
   }
+}

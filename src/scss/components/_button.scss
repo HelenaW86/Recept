@@ -1,5 +1,4 @@
 .btn {
-  margin: 1%;
   border: none;
   font-size: 17px;
   line-height: 0.8;
@@ -9,8 +8,13 @@
   text-transform: uppercase;
   
   &.primary-btn {
-    margin-top: 1rem;
+    margin: 1.5em auto 0;
+    display: block;
     background-color: $black;
     color: $white;
+
+    @media (min-width: $tablet) {
+      margin: 1.5em 0 0;
+    }
   }
 }
