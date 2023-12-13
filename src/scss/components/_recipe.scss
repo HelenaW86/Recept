@@ -37,27 +37,38 @@
   }
 
   .content-section {
-    padding: 0 1rem;
     max-width: 1200px;
     margin: auto;
+    padding: 0 16px;
 
     .recipe-content-container {
-      padding-bottom: 1rem;
-      margin-top: 1rem;
-      .dinner-prepare-span{
-        font-size: 1rem;
-        margin-right: 1rem;
+      margin: 1em 0;
+
+      &:last-child {
+        margin-bottom: 2em;
+      } 
+
+      &.prepare {
+        display: flex;
+
+        .prepare-span {
+          font-size: 1.125rem;
+          margin-right: 1em;
+          display: flex;
+    
+          @media (min-width: $tablet){
+            font-size: 1.2rem; 
+          }
   
-        @media (min-width: $tablet){
-          font-size: 1.2rem; 
+          .prepare-icon{
+            margin-right: 0.3em;
+            height: 20px;
+  
+            @media (min-width: $tablet){
+              width: 1.4rem; 
+            }
+          }
         }
-      }
-    }
-    .dinner-icon{
-      margin-right: 0.3rem;
-      width: 1.2rem; 
-      @media (min-width: $tablet){
-        width: 1.4rem; 
       }
     }
 
@@ -77,9 +88,9 @@
         list-style: none;
 
         &::before {
-          content: "🍩";
+          content: "♦︎";
           position: absolute;
-          left: -5px;
+          left: -2px;
         }
       }
     }
