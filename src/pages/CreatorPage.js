@@ -7,18 +7,11 @@ export const CreatorPage = ({recipes, title, tags, onTagsChange, toggle, setTogg
   const { creator } = useParams();
   return (
     <>
-      <Navbar
-        tags={tags}
-        onTagsChange={onTagsChange}
-        toggle={toggle}
-        setToggle={setToggle}
-        resetRecipes={resetRecipes}
-      />
-      <Hero
+      {/* <Hero
         onTagsChange={onTagsChange}
         tags={tags}
         resetRecipes={resetRecipes}
-      />
+      /> */}
       <RecipeCards recipes={recipes} title={title} />
     </>
   );

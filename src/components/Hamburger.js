@@ -1,8 +1,8 @@
 import React from "react";
 
-export const Hamburger = (props) => {
+export const Hamburger = ({toggle, setToggle}) => {
   return(
-    <button className={props.toggle ? "open hamburger" : "hamburger"} onClick={() => props.setToggle(!props.toggle)}>
+    <button className={toggle ? "open hamburger" : "hamburger"} onClick={() => setToggle(!toggle)}>
       <div className="lines"></div>
       <div className="lines"></div>
       <div className="lines"></div>

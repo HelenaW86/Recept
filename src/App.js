@@ -4,10 +4,10 @@ import { Routes, Route, Outlet } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Theme from "./components/Theme";
 import Recipe from "./pages/Recipe";
 import Home from "./pages/Home";
 import { CreatorPage } from "./pages/CreatorPage";
+import RecipeCards from "./components/RecipeCards";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -55,9 +55,15 @@ function App() {
     setFilteredRecipes(latestRecipes);
     setTitle("Senaste Recepten");
   };
-
   return (
     <>
+      <Navbar
+        tags={tags}
+        onTagsChange={onTagsChange}
+        toggle={toggle}
+        setToggle={setToggle}
+        resetRecipes={resetRecipes}
+      />
       <Routes>
         <Route
           path="/"
@@ -74,32 +80,21 @@ function App() {
               />
               <Outlet />
             </>
-          }
-        >
+          }>
           <Route
-                path="/outlet"
-                element={
-                  <h2>OUTLET</h2>
-                }
-              ></Route>
-        </Route>
-        <Route
-          path="recept/:recipeSlug"
-          element={<Recipe recipes={recipes} />}
-        />
-        <Route
+            path="/"
+            element={<RecipeCards recipes={filteredRecipes} title={title} />}
+          />
+          <Route
           path="/:creator"
           element={
-            <CreatorPage
-              title={title}
-              recipes={filteredRecipes}
-              tags={tags}
-              onTagsChange={onTagsChange}
-              toggle={toggle}
-              setToggle={setToggle}
-              resetRecipes={resetRecipes}
-            />
+            <RecipeCards recipes={filteredRecipes} title={title} />
           }
+        />
+        </Route>
+        <Route
+          path=":creator/:recipeSlug"
+          element={<Recipe recipes={recipes} />}
         />
       </Routes>
       <Footer />

@@ -1,10 +1,10 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { ReactComponent as Clock } from "../assets/clock.svg";
-import { ReactComponent as Back } from "../assets/backarrow.svg";
+
 import { ReactComponent as Portions } from "../assets/portions.svg";
+import { BackButton } from "../components/buttons/BackButton";
 const Recipe = ({ recipes }) => {
   const { recipeSlug } = useParams();
   const theRecipe = recipes.find((r) => r.fields.slug === recipeSlug);
@@ -13,7 +13,7 @@ const Recipe = ({ recipes }) => {
   return (
     <article className="single-recipe">
       <div className="hero-recipe" style={{backgroundImage: `url('${recipe?.image?.fields?.file?.url}')`}}>
-        <Link to={"/"}><Back fill="white"/></Link>
+     <BackButton />
         <h1>{recipe?.title}</h1>
       </div>
       <section className="content-section">
