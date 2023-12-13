@@ -17,13 +17,15 @@ const Recipe = ({ recipes }) => {
         <h1>{recipe?.title}</h1>
       </div>
       <section className="content-section">
-        <div className="recipe-content-container">
-          <span className="dinner-prepare-span">
-          <Clock className="dinner-icon"/>
+        <div className="recipe-content-container prepare">
+          <span className="prepare-span">
+            <Clock className="prepare-icon"/>
             {recipe?.time} min
           </span>
-          <Portions className="dinner-icon"/>
-          <span className="dinner-prepare-span">{recipe?.serves}</span>
+          <span className="prepare-span">
+            <Portions className="prepare-icon"/>
+            {recipe?.serves} portioner
+          </span>
         </div>
         <div className="recipe-content-container">
          <h2>Ingredienser:</h2>
