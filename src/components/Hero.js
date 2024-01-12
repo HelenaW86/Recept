@@ -9,7 +9,7 @@ const Hero = ({ onTagsChange, tags, resetRecipes }) => {
 
   return (
     <section className={`hero${creator ? " hero-creator" : ""}`}>
-      {creator ? (
+      {creator && creator === "helena" || creator === "elin" || creator === "sara" || creator === "anna" ? (
         <div className="hero-content">
           <h1 className="hero-creator-title">{creatorName}</h1>
           <p>
