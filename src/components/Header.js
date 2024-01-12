@@ -1,4 +1,3 @@
-import { Autoplay } from "swiper";
 import {ReactComponent as GodMat} from "../assets/godmat.svg"
 import { Link } from "react-router-dom";
 

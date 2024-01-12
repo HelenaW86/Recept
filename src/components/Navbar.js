@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import Menu from "./Menu";
 import { Hamburger } from "./Hamburger";
+import {ReactComponent as GodMat} from "../assets/goldLogo.svg"
+import { Link } from "react-router-dom";
 
-const Navbar = ({ tags, onTagsChange, setToggle, toggle }) => {
+const Navbar = ({ tags, onTagsChange, setToggle, toggle, resetRecipes }) => {
   const [background, setBackground] = useState(false);
 
   window.addEventListener("scroll", () => {
     if(!toggle){
-      if (window.scrollY > 1) {
+      if (window.scrollY > 40) {
         setBackground(true);
       } else {
         setBackground(false);
@@ -18,6 +20,11 @@ const Navbar = ({ tags, onTagsChange, setToggle, toggle }) => {
   return (
     <>
       <nav className={`navbar ${background &&  !toggle ? "background" : ""}`}>
+        {background && (
+          <Link to={"/"}>
+            <GodMat className="navbar-logo" onClick={() => resetRecipes()} />
+          </Link>
+        )}
         <Hamburger setToggle={setToggle} toggle={toggle} />
       </nav>
 

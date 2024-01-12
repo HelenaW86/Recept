@@ -1,5 +1,5 @@
 import React from "react";
-import {ReactComponent as GodMat} from "../assets/footerLogo.svg"
+import {ReactComponent as GodMat} from "../assets/goldLogo.svg"
 
 const Footer = () => {
 const year = new Date().getFullYear();

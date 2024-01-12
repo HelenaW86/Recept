@@ -8,7 +8,15 @@ nav.navbar {
   transition: all 1 ease-in;
 
   &.background {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+  }
+
+  .navbar-logo {
+    height: 48px;
+    position: fixed;
+    top: 11px;
+    left: 16px;
   }
 
   button.hamburger {
