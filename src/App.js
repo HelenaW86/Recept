@@ -9,7 +9,6 @@ import Home from "./pages/Home";
 import RecipeCards from "./components/RecipeCards";
 
 function App() {
-  const {creator} = useParams();
   const [recipes, setRecipes] = useState([]);
   const [tags, setTags] = useState([]);
   const [title, setTitle] = useState("Senaste recepten");
@@ -24,14 +23,7 @@ function App() {
         const orderedRecipes = response?.items.sort((a, b) => {
           return new Date(b.sys.createdAt) - new Date(a.sys.createdAt);
         });
-        // const selected = tags.find((t) => t.name === creator)?.sys?.id; 
-
-        // console.log(selected)
-        // const filter = recipes.filter((recipe) => {
-        //   return recipe.metadata.tags[group]?.sys.id === (selected !== undefined ? selected : tag?.sys.id);
-        // });
         
-
         setRecipes(orderedRecipes);
         setLatestRecipes(orderedRecipes);
         setFilteredRecipes(orderedRecipes);
