@@ -4,16 +4,16 @@ import Theme from "./Theme";
 import { useParams } from "react-router-dom";
 
 const Hero = ({ onTagsChange, tags, resetRecipes }) => {
-  const { creator } = useParams();
-  const creatorName = creator?.charAt(0)?.toUpperCase() + creator?.slice(1)
+  const { slug } = useParams();
+  const slugName = slug?.charAt(0)?.toUpperCase() + slug?.slice(1)
 
   return (
-    <section className={`hero${creator ? " hero-creator" : ""}`}>
-      {creator && creator === "helena" || creator === "elin" || creator === "sara" || creator === "anna" ? (
+    <section className={`hero${slug ? " hero-slug" : ""}`}>
+      {slug && slug === "helena" || slug === "elin" || slug === "sara" || slug === "anna" ? (
         <div className="hero-content">
-          <h1 className="hero-creator-title">{creatorName}</h1>
+          <h1 className="hero-slug-title">{slugName}</h1>
           <p>
-            Här har {creatorName} sparat sina bästa recept som hon gärna lagar om och
+            Här har {slugName} sparat sina bästa recept som hon gärna lagar om och
             om igen.
           </p>
         </div>
