@@ -1,6 +1,6 @@
 import { client } from "./client";
 import { useState, useEffect } from "react";
-import { Routes, Route, Outlet, useParams } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -85,14 +85,14 @@ function App() {
             element={<RecipeCards recipes={filteredRecipes} title={title} />}
           />
           <Route
-          path="/:creator"
+          path="/:slug"
           element={
             <RecipeCards recipes={filteredRecipes} title={title} />
           }
         />
         </Route>
         <Route
-          path=":creator/:recipeSlug"
+          path=":slug/:recipeSlug"
           element={<Recipe recipes={recipes} />}
         />
       </Routes>
