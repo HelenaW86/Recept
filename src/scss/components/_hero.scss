@@ -10,6 +10,14 @@
   align-items: center;
   justify-content: center;
 
+  .hero-author-title {
+    font-size: 4rem;
+
+    @media (min-width: $tablet) {
+      font-size: 6rem;
+    }
+  }
+
   .hero-content {
     p {
       font-size: 1.2rem;
@@ -39,6 +47,7 @@
     }
 
     .theme-button{
+      font-family: $mainFont;
       background-color: white;
       min-width: calc(50% - 4px);
       font-size: 0.9rem;

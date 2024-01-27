@@ -21,7 +21,6 @@ const RecipeCards = ({ recipes, title }) => {
   };
 
   const GetTitle = () => {
-    console.log("inne")
     let t
     if (slug) {
       if (slug === "helena" || slug === "elin" || slug === "anna" || slug === "sara") {
@@ -44,8 +43,7 @@ const RecipeCards = ({ recipes, title }) => {
         );
       })
     : recipes;
-  
-    
+
 
   const getRecipes = () => {
     setAmount((prev) => prev + 2);
@@ -58,7 +56,7 @@ const RecipeCards = ({ recipes, title }) => {
           <article className="recipe-card-wrapper" key={recipe.sys.id}>
             <Link
               className="recipe-card"
-              to={`/${uppdatedSlug ?? "recipe"}/${recipe.fields.uppdatedSlug}`}>
+              to={`/${uppdatedSlug ?? "recipe"}/${recipe.fields.slug}`}>
               <div className="recipe-img-wrapper">
                 <img
                   className="recipe-img"

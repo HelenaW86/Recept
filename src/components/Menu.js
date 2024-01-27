@@ -6,7 +6,7 @@ const Menu = ({ tags, onTagsChange }) => {
   const authorTags = tags?.filter(tag => tag.sys.id.includes("author"));
   return (
     <>
-      <p>Kategorier</p>
+      <h2>Kategorier</h2>
       <ul>
         {categoryTags?.map(tag => {
           return (
@@ -16,7 +16,7 @@ const Menu = ({ tags, onTagsChange }) => {
           );
         })}
       </ul>
-      <p>Matkreatörer</p>
+      <h2>Matkreatörer</h2>
       <ul>
         {authorTags?.map(tag => {
           return (

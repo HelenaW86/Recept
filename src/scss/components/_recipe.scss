@@ -99,6 +99,20 @@
           }
         }
       }
+
+      &.author {
+        display: flex;
+        justify-content: space-between;
+
+        .recipe-author span {
+          cursor: pointer;
+          margin-left: 0.4em;
+        }
+
+        .recipe-cred {
+          color: rgba(0, 0, 0, 0.3);
+        }
+      }
     }
 
     @media (min-width: $tablet) {

@@ -11,7 +11,7 @@ const Hero = ({ onTagsChange, tags, resetRecipes }) => {
     <section className={`hero${slug ? " hero-slug" : ""}`}>
       {slug && slug === "helena" || slug === "elin" || slug === "sara" || slug === "anna" ? (
         <div className="hero-content">
-          <h1 className="hero-slug-title">{slugName}</h1>
+          <h1 className="hero-author-title">{slugName}</h1>
           <p>
             Här har {slugName} sparat sina bästa recept som hon gärna lagar om och
             om igen.

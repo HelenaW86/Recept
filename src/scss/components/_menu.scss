@@ -2,49 +2,59 @@
 
 .dropdown-menu-modal{
   @media (min-width: $tablet) {
-  background-color: rgba(250, 244, 244, 0.616);
-  z-index: 2;
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  transform: translateX(100%);
-  transition: 0.1s ease-out;
-  cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: 0.1s ease-out;
+    cursor: pointer;
 
-  &.open {
-    transform: translateX(0);
-  }}
+    &.open {
+      transform: translateX(0);
+    }
+  }
 }
+
 .dropdown-menu {
   background-color: $white;
   z-index: 3;
   position: fixed;
   width: 100%;
-  padding: 6em;
+  padding: 6em 3em;
   height: 100vh;
   transform: translateX(100%);
   transition: 0.2s ease-out;
+  
   @media (min-width: $tablet) {
+    padding: 6em;
     right: 0;
     transform: translateX(100%);
     max-width: 500px;
   }
 
+  ul {
+    margin-bottom: 2em;
+  }
+
   &.open {
     transform: translateX(0);
+
     @media (min-width: $tablet) {
       right: 500px;
       transform: translateX(500px);
       max-width: 500px;
-  }
+    }
   }
   
   .menu-item {
     list-style: none;
     line-height: 3;
-
+    
     button {
-      
+      font-family: $mainFont;
       border: none;
       background: none;
       font-size: 1.5rem;
