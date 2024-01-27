@@ -11,7 +11,7 @@ const Menu = ({ tags, onTagsChange }) => {
         {categoryTags?.map(tag => {
           return (
             <li className="menu-item" key={tag?.sys.id}>
-              <button onClick={() => {onTagsChange(tag, 0); navigate(`/${tag?.name}`)}}>{tag?.name}</button>
+              <button onClick={() => {onTagsChange(tag); navigate(`/${tag?.name}`)}}>{tag?.name}</button>
             </li>
           );
         })}
@@ -21,7 +21,7 @@ const Menu = ({ tags, onTagsChange }) => {
         {authorTags?.map(tag => {
           return (
             <li className="menu-item" key={tag?.sys?.id}>
-              <button  onClick={() => {onTagsChange(tag, 0); navigate(`/${tag?.name}`)}}>
+              <button  onClick={() => {onTagsChange(tag); navigate(`/${tag?.name}`)}}>
               {tag?.name}
               </button>
             </li>

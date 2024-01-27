@@ -38,9 +38,9 @@ function App() {
       .catch(console.error);
   }, []);
 
-  const onTagsChange = (tag, group) => {
+  const onTagsChange = (tag) => {
     const filter = recipes.filter((recipe) => {
-      return recipe.metadata.tags[group]?.sys.id ===  tag?.sys.id;
+      return  recipe.metadata.tags.some((t) => t.sys.id === tag.sys.id)
     });
     
     setTitle(
@@ -82,12 +82,12 @@ function App() {
           }>
           <Route
             path="/"
-            element={<RecipeCards recipes={filteredRecipes} title={title} />}
+            element={<RecipeCards recipes={filteredRecipes}  title={title}/>}
           />
           <Route
           path="/:slug"
           element={
-            <RecipeCards recipes={filteredRecipes} title={title} />
+            <RecipeCards recipes={filteredRecipes} title={title}/>
           }
         />
         </Route>

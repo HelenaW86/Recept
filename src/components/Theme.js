@@ -8,7 +8,7 @@ const Theme = ({ tags, onTagsChange }) => {
     <div className="theme-button-wrapper">
       {themeTags?.map(tag => {
           return (
-            <button className="theme-button btn" key={tag?.sys.id} onClick={() => {onTagsChange(tag, 1); navigate(`/${tag?.name}`) }} >
+            <button className="theme-button btn" key={tag?.sys.id} onClick={() => {onTagsChange(tag); navigate(`/${tag?.name}`) }} >
              {tag?.name}
             </button>
           )
