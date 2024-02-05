@@ -69,7 +69,10 @@ const RecipeCards = ({ recipes, title }) => {
                   <h3 className="recipe-title">{recipe.fields.title}</h3>
                   <p className="recipe-description">{recipe.fields.summary}</p>
                 </div>
-                <span>{recipe.fields.time} min</span>
+                <div className="recipe-extra-information">
+                <span>{recipe.fields.time && recipe.fields.time + " min"}</span>
+                <span className="recipe-cred">{recipe?.fields?.cred}</span>
+                </div>
               </div>
             </Link>
           </article>

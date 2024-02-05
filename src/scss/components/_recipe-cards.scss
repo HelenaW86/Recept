@@ -60,6 +60,15 @@
             font-size: 1.2rem; 
           }
         }
+        .recipe-extra-information{
+          display: flex;
+          justify-content: space-between;
+
+          .recipe-cred{
+            opacity: 0.4;
+            font-weight: 500;
+          }
+        }
       }
     }
   
