@@ -11,6 +11,16 @@
     flex-direction: column;
     justify-content: space-between;
     color: white;
+    .recipe-author {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      color: white;
+      font-weight: 300;
+      font-size: 17px;
+      padding: 3px;
+      text-transform: capitalize;
+    }
     
     @media (min-width: $laptop){
       height: 42vh;
@@ -40,7 +50,7 @@
     padding: 0 16px;
 
     .recipe-content-container {
-      margin: 1em 0 3em;
+      margin: 1em 0 2em;
 
       &.prepare {
         display: flex;

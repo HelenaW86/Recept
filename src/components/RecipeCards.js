@@ -56,8 +56,13 @@ const RecipeCards = ({ recipes, title }) => {
           <article className="recipe-card-wrapper" key={recipe.sys.id}>
             <Link
               className="recipe-card"
-              to={`/${uppdatedSlug ?? "recipe"}/${recipe.fields.slug}`}>
+              to={`/${slug ?? "recipe"}/${recipe.fields.slug}`}>
               <div className="recipe-img-wrapper">
+                <p className="recipe-author">{
+                  recipe?.metadata?.tags?.find((t) =>
+                  t?.sys?.id.includes("author")
+                )?.sys?.id.slice(6)
+                }</p>
                 <img
                   className="recipe-img"
                   src={recipe.fields.image.fields.file.url}
@@ -72,6 +77,7 @@ const RecipeCards = ({ recipes, title }) => {
                 <div className="recipe-extra-information">
                 <span>{recipe.fields.time && recipe.fields.time + " min"}</span>
                 <span className="recipe-cred">{recipe?.fields?.cred}</span>
+           {     console.log(recipe)}
                 </div>
               </div>
             </Link>

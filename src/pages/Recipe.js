@@ -12,23 +12,34 @@ const Recipe = ({ recipes }) => {
 
   return (
     <article className="single-recipe">
-      <div className="hero-recipe" style={{backgroundImage: `url('${recipe?.image?.fields?.file?.url}')`}}>
-     <BackButton />
+      <div
+        className="hero-recipe"
+        style={{
+          backgroundImage: `url('${recipe?.image?.fields?.file?.url}')`,
+        }}>
+        <BackButton />
+        <i className="recipe-author">
+          {theRecipe?.metadata?.tags
+            ?.find((t) => t?.sys?.id.includes("author"))
+            ?.sys?.id.slice(6)}
+        </i>
         <h1>{recipe?.title}</h1>
+        
       </div>
       <section className="content-section">
         <div className="recipe-content-container prepare">
           <span className="prepare-span">
-            <Clock className="prepare-icon"/>
+            <Clock className="prepare-icon" />
             {recipe?.time} min
           </span>
           <span className="prepare-span">
-            <Portions className="prepare-icon"/>
+            <Portions className="prepare-icon" />
             {recipe?.serves} portioner
           </span>
         </div>
+        <p style={{color: "#DFCEA4"}}>{theRecipe.fields.summary}</p>
         <div className="recipe-content-container">
-         <h2>Ingredienser:</h2>
+          <h2>Ingredienser:</h2>
           <ReactMarkdown className="ul-list">
             {recipe?.ingredients}
           </ReactMarkdown>
