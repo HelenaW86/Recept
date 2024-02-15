@@ -23,7 +23,6 @@ function App() {
         const orderedRecipes = response?.items.sort((a, b) => {
           return new Date(b.sys.createdAt) - new Date(a.sys.createdAt);
         });
-        
         setRecipes(orderedRecipes);
         setLatestRecipes(orderedRecipes);
         setFilteredRecipes(orderedRecipes);

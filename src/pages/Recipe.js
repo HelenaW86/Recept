@@ -10,6 +10,9 @@ const Recipe = ({ recipes }) => {
   const theRecipe = recipes.find((r) => r.fields.slug === recipeSlug);
   const recipe = theRecipe?.fields;
 
+  let author = theRecipe?.metadata?.tags?.find((t) => t?.sys?.id.includes("author"))?.sys?.id.slice(6);
+  author = author?.charAt(0).toUpperCase() + author?.slice(1);
+
   return (
     <article className="single-recipe">
       <div
@@ -18,13 +21,7 @@ const Recipe = ({ recipes }) => {
           backgroundImage: `url('${recipe?.image?.fields?.file?.url}')`,
         }}>
         <BackButton />
-        <i className="recipe-author">
-          {theRecipe?.metadata?.tags
-            ?.find((t) => t?.sys?.id.includes("author"))
-            ?.sys?.id.slice(6)}
-        </i>
         <h1>{recipe?.title}</h1>
-        
       </div>
       <section className="content-section">
         <div className="recipe-content-container prepare">
@@ -37,7 +34,7 @@ const Recipe = ({ recipes }) => {
             {recipe?.serves} portioner
           </span>
         </div>
-        <p style={{color: "#DFCEA4"}}>{theRecipe.fields.summary}</p>
+        <p style={{ color: "#DFCEA4" }}>{theRecipe?.fields?.summary}</p>
         <div className="recipe-content-container">
           <h2>Ingredienser:</h2>
           <ReactMarkdown className="ul-list">
@@ -49,6 +46,19 @@ const Recipe = ({ recipes }) => {
           <ReactMarkdown className="ol-list">
             {recipe?.description}
           </ReactMarkdown>
+        </div>
+        <div className="recipe-content-container author">
+          {author ? 
+            <p className="recipe-author">
+              Kreatör: {author}
+            </p>
+            : <span></span>
+          }
+          {recipe?.cred && 
+            <p className="recipe-cred">
+              Cred till: {recipe?.cred}
+            </p>
+          }
         </div>
       </section>
     </article>
