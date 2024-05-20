@@ -4,9 +4,9 @@ import { MoreButton } from "./buttons/MoreButton";
 
 const RecipeCards = ({ recipes, title }) => {
   const { slug } = useParams();
-  const [amount, setAmount] = useState(2);
+  const [amount, setAmount] = useState(6);
   useEffect(() => {
-    setAmount(2);
+    setAmount(6);
   }, [title]);
 
   const slugFunction = () => {
@@ -46,7 +46,7 @@ const RecipeCards = ({ recipes, title }) => {
 
 
   const getRecipes = () => {
-    setAmount((prev) => prev + 2);
+    setAmount((prev) => prev + 6);
   };
   return (
     <section className="recipe-list">

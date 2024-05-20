@@ -11,6 +11,7 @@
     flex-direction: column;
     justify-content: space-between;
     color: white;
+
     .recipe-author {
       position: absolute;
       bottom: 0;
@@ -85,20 +86,33 @@
       }
 
       .ul-list {
+        ul:not(:last-child) {
+          margin-bottom: 2em;
+        }
         li {
           padding-left: 20px;
           padding-top: 10px;
           list-style: none;
   
           &::before {
-            content: "♦︎";
+            content: "";
+            background-image: url(../../assets/bullet.svg);
+            height: 20px;
+            width: 14px;
+            background-repeat: no-repeat;
+            background-size: contain;
             position: absolute;
             left: -2px;
+            bottom: 6px;
           }
         }
       }
 
       .ol-list {
+        ol:not(:last-child) {
+          margin-bottom: 2em;
+        }
+
         li {
           list-style-position: unset;
           margin-left: 20px;

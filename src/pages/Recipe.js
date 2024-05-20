@@ -34,7 +34,7 @@ const Recipe = ({ recipes }) => {
             {recipe?.serves} portioner
           </span>
         </div>
-        <p style={{ color: "#DFCEA4" }}>{theRecipe?.fields?.summary}</p>
+        <p>{theRecipe?.fields?.summary}</p>
         <div className="recipe-content-container">
           <h2>Ingredienser:</h2>
           <ReactMarkdown className="ul-list">
